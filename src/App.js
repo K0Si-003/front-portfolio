@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
 
-export const App = () => {
+const App = () => {
   return (
     <>
       <Header />
@@ -13,3 +13,5 @@ export const App = () => {
     </>
   );
 };
+
+export default App;

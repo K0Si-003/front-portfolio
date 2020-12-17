@@ -4,7 +4,7 @@ import Home from './views/Home';
 import Projects from './views/Projects';
 import Contact from './views/Contact';
 
-export const Main = () => {
+const Main = () => {
   return (
     <main>
       <Switch>
@@ -21,3 +21,5 @@ export const Main = () => {
     </main>
   );
 };
+
+export default Main;
