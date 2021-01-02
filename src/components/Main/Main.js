@@ -1,8 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Home from './views/Home';
-import Projects from './views/Projects';
-import Contact from './views/Contact';
+import Home from '../../views/Home';
+import Projects from '../../views/Projects';
+import Contact from '../../views/Contact';
 
 const Main = () => {
   return (

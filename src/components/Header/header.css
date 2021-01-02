@@ -1,0 +1,17 @@
+.main_nav {
+  display: flex;
+}
+
+.logo svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  margin-bottom: 50px;
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
