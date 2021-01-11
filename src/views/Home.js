@@ -1,10 +1,15 @@
+import './home.css';
 import React from 'react';
 
 const Home = () => {
   return (
-    <div>
-      <h1>Accueil</h1>
-      <h2>Bienvenue sur mon portfolio</h2>
+    <div className='title'>
+      <h1>Hello World !</h1>
+      <p>
+        I&apos;m Hugo Pioda
+        <br />
+        Front End Web Developer
+      </p>
     </div>
   );
 };
