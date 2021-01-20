@@ -1,11 +1,10 @@
+import './footer.css';
 import React from 'react';
 
 const Footer = () => {
   return (
     <footer>
-      <div>
-        <p>Pied de page - Copyright ...</p>
-      </div>
+      <p>Pied de page</p>
     </footer>
   );
 };

@@ -6,19 +6,17 @@ import Contact from '../../views/Contact';
 
 const Main = () => {
   return (
-    <main>
-      <Switch>
-        <Route exact path='/'>
-          <Home />
-        </Route>
-        <Route exact path='/projets'>
-          <Projects />
-        </Route>
-        <Route exact path='/contact'>
-          <Contact />
-        </Route>
-      </Switch>
-    </main>
+    <Switch>
+      <Route exact path='/'>
+        <Home />
+      </Route>
+      <Route exact path='/projets'>
+        <Projects />
+      </Route>
+      <Route exact path='/contact'>
+        <Contact />
+      </Route>
+    </Switch>
   );
 };
 
