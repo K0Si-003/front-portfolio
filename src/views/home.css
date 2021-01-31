@@ -7,31 +7,84 @@
   overflow: hidden;
 }
 .container {
-  position: relative;
-  left: 15%;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin-left: 10%;
+  overflow: hidden;
+  display: flex;
+  justify-items: center;
+  align-items: center;
 }
 
+.fp-tableCell {
+  vertical-align: baseline !important;
+}
+
+.project {
+  width: 400px;
+}
 /******************************************
-ENTER ANIMATION
+SECTION ENTER ANIMATION
 ******************************************/
 
-/* .text {
-  position: absolute;
-  top: 50%;
-  left: 11%;
+section.active .text {
+  animation: enter-text 1.8s cubic-bezier(0.86, 0, 0.07, 1);
 }
-
-.text-entering {
-  animation: enter 1.8s cubic-bezier(0.86, 0, 0.07, 1);
-}
-
-@keyframes enter {
+@keyframes enter-text {
   0% {transform: translate3d(-250%, 0, 0);}
   100% {transform: translate3d(0, 0, 0);}
-} */
+}
+
+.image {
+  display: block;
+  position: relative;
+  width: 50%;
+  height: 70%;
+  margin: 0 18% 0 auto;
+  box-shadow: 0 80px 140px -40px rgba(0, 0, 0, 0.6);
+}
+.image-project {
+  background: url(../assets/images/project.jpg) no-repeat center;
+  background-size: cover;
+  background-blend-mode: darken;
+}
+.image-contact {
+  background: url(../assets/images/contact.jpg) no-repeat center;
+  background-size: cover;
+}
+.image-over {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.image-cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background: #ff4d5a;
+  transform: translate3d(100%, 0, 0); 
+}
+.image-cover:last-child {
+  background: #072142;
+}
+section.active .image-cover {
+  animation: enter-image 1.5s cubic-bezier(0.86, 0, 0.07, 1);
+}
+section.active .image-cover:last-child {
+  animation: enter-image 1.3s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+@keyframes enter-image {
+  0% {transform: translate3d(0, 0, 0);}
+  100% {transform: translate3d(100%, 0, 0);}
+}
 
 /******************************************
-HOME NAVIGATION
+SECTION NAVIGATION
 ******************************************/
 
 #fp-nav {
@@ -66,7 +119,7 @@ HOME NAVIGATION
     width: auto;
     top: auto !important;
     left: 50% !important;
-    bottom: 40px;
+    bottom: 30px;
     transform: translate3d(-50%, 0, 0) !important;
   }
   #fp-nav ul {
@@ -76,11 +129,11 @@ HOME NAVIGATION
   #fp-nav ul li {
     width: 3px !important;
     height: auto !important;
-    margin: 0 28px !important;
+    margin: 0 35px !important;
   }
   #fp-nav ul li a {
     width: 3px !important;
-    height: 24px !important;
+    height: 20px !important;
   }
   #fp-nav ul li .active {
     height: 40px !important;

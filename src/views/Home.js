@@ -2,6 +2,8 @@ import './home.css';
 import React from 'react';
 import ReactFullpage from '@fullpage/react-fullpage';
 
+// import project from '../assets/images/project.jpg';
+
 const Home = () => {
   const anchors = ['home', 'projects', 'about', 'contact'];
   return (
@@ -17,29 +19,47 @@ const Home = () => {
             <ReactFullpage.Wrapper>
               <section className='section'>
                 <div className='container'>
-                  <h1>
-                    Hugo <br />
-                    Pioda
-                  </h1>
-                  <p>Web Developer</p>
+                  <div className='text' id='section1'>
+                    <h1>
+                      Hugo <br />
+                      Pioda
+                    </h1>
+                    <p>Web Developer</p>
+                  </div>
                 </div>
               </section>
               <section className='section'>
                 <div className='container'>
-                  <p>Latests projects</p>
-                  <button onClick={() => fullpageApi.moveSectionDown()}>
-                    Click me to move down
-                  </button>
+                  <div className='text' id='section1'>
+                    <p>Latests projects</p>
+                  </div>
+                  <div className='image image-project'>
+                    <div className='image-over'>
+                      <div className='image-cover'></div>
+                      <div className='image-cover'></div>
+                    </div>
+                  </div>
+                  {/* <img className='project' src={project} alt='project' /> */}
                 </div>
               </section>
               <section className='section'>
                 <div className='container'>
-                  <p>About me</p>
+                  <div className='text'>
+                    <p>About me</p>
+                  </div>
                 </div>
               </section>
               <section className='section'>
                 <div className='container'>
-                  <p>Contact me</p>
+                  <div className='text'>
+                    <p>Contact me</p>
+                  </div>
+                  <div className='image image-contact'>
+                    <div className='image-over'>
+                      <div className='image-cover'></div>
+                      <div className='image-cover'></div>
+                    </div>
+                  </div>
                 </div>
               </section>
             </ReactFullpage.Wrapper>

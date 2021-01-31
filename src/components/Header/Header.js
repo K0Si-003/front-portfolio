@@ -12,7 +12,7 @@ const Header = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   setTimeout(() => {
     setIsLoaded(true);
-  }, 0);
+  }, 100);
 
   const closeMenu = (isMenuOpen) => (isMenuOpen ? setIsMenuOpen(false) : null);
 
