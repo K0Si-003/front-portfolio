@@ -1,53 +1,108 @@
+/******************************************
+GENERAL
+******************************************/
+
 .home {
   height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
-  bottom: 0;
-  overflow: hidden;
 }
 .container {
   position: absolute;
-  height: 100%;
+  height: 100vh;
   width: 100%;
-  margin-left: 10%;
   overflow: hidden;
   display: flex;
   justify-items: center;
   align-items: center;
 }
-
+@media screen and (max-width: 420px) {
+  .container {
+    flex-direction: column-reverse;
+  }
+}
 .fp-tableCell {
   vertical-align: baseline !important;
+}
+
+/******************************************
+TEXT
+******************************************/
+
+.text {
+  color: #fff;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  -webkit-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0);
+  z-index: 200;
+  margin-left: 11%;
+}
+@media screen and (max-width: 420px) {
+  .text {
+    position: relative;
+    top: auto;
+  }
+}
+
+.title_name{
+  font-size: 4rem;
+  font-family: Poppins;
+}
+
+.text .separator {
+  display: inline-block;
+  margin: 2rem 1rem;
+}
+.text .separator span {
+  display: block;
+  width: 88px;
+  height: 4px;
+  border-radius: 5px;
+  background: var(--yellow);
+}
+.text .separator span:first-child {
+  margin-bottom: 1.4rem;
+}
+.text .separator span:last-child {
+  margin-left: 54px;
 }
 
 .project {
   width: 400px;
 }
-/******************************************
-SECTION ENTER ANIMATION
-******************************************/
 
-section.active .text {
-  animation: enter-text 1.8s cubic-bezier(0.86, 0, 0.07, 1);
-}
-@keyframes enter-text {
-  0% {transform: translate3d(-250%, 0, 0);}
-  100% {transform: translate3d(0, 0, 0);}
-}
+/******************************************
+IMAGES
+******************************************/
 
 .image {
   display: block;
   position: relative;
   width: 50%;
   height: 70%;
-  margin: 0 18% 0 auto;
+  margin: 0 8% 0 auto;
   box-shadow: 0 80px 140px -40px rgba(0, 0, 0, 0.6);
+}
+@media screen and (max-width: 800px) {
+  .image {
+    margin-right: 40px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .image {
+    position: absolute;
+    width: 80%;
+    height: 35%;
+    margin: 0 10%;
+    top: 15%;
+  }
 }
 .image-project {
   background: url(../assets/images/project.jpg) no-repeat center;
   background-size: cover;
-  background-blend-mode: darken;
 }
 .image-contact {
   background: url(../assets/images/contact.jpg) no-repeat center;
@@ -65,12 +120,39 @@ section.active .text {
   height: 100%;
   top: 0;
   right: 0;
-  background: #ff4d5a;
-  transform: translate3d(100%, 0, 0); 
+  background: var(--yellow);
+  transform: translate3d(100%, 0, 0);
+  opacity: 0.8;
 }
 .image-cover:last-child {
-  background: #072142;
+  background: var(--green);
 }
+
+/******************************************
+SECTION ENTER ANIMATION
+******************************************/
+
+section.active .separator span:first-child {
+  animation: enter-text 1.2s cubic-bezier(0.86, 0, 0.07, 1);
+}
+section.active .separator span:last-child {
+  animation: enter-text 1.5s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+section.active .text .title_name{
+  animation: enter-text 1.8s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+section.active .text .title_job{
+  animation: enter-text 2
+  s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+@keyframes enter-text {
+  0% {transform: translate3d(-250%, 0, 0);}
+  100% {transform: translate3d(0, 0, 0);}
+}
+
 section.active .image-cover {
   animation: enter-image 1.5s cubic-bezier(0.86, 0, 0.07, 1);
 }
@@ -112,7 +194,6 @@ SECTION NAVIGATION
 #fp-nav ul li .active {
   width: 40px;
 }
-
 
 @media screen and (max-width: 800px) {
   #fp-nav {

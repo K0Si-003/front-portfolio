@@ -1,8 +1,7 @@
 import './header.css';
 import logo from '../../assets/images/logo.svg';
-import github from '../../assets/images/github.svg';
-import linkedin from '../../assets/images/linkedin.svg';
-// import moon from '../../assets/images/moon.svg';
+import Canvas from '../Canvas/Canvas';
+import Social from '../Social/Social';
 
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
@@ -12,7 +11,7 @@ const Header = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   setTimeout(() => {
     setIsLoaded(true);
-  }, 100);
+  }, 200);
 
   const closeMenu = (isMenuOpen) => (isMenuOpen ? setIsMenuOpen(false) : null);
 
@@ -27,24 +26,9 @@ const Header = () => {
           onClick={closeMenu}
         />
       </NavLink>
-      <div className='wrap'>
+      <div className='right_wrap'>
         <div className='social_icons'>
-          <a
-            href='https://www.linkedin.com/in/hugo-pioda/'
-            target='_blank'
-            rel='noopener noreferrer'
-            onClick={closeMenu}
-          >
-            <img src={linkedin} title='logo' alt='logo' />
-          </a>
-          <a
-            href='https://github.com/K0Si-003'
-            target='_blank'
-            rel='noopener noreferrer'
-            onClick={closeMenu}
-          >
-            <img src={github} title='logo' alt='logo' />
-          </a>
+          <Social closeMenu={closeMenu} />
         </div>
         <div className='menu_btn' onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <button
@@ -80,22 +64,13 @@ const Header = () => {
             </NavLink>
           </li>
         </ul>
+        <div className='wrap_social'>
+          <Social closeMenu={closeMenu} />
+        </div>
       </nav>
       <div className={`curtain ${isLoaded ? 'hidden' : ''}`}></div>
       <div className='background'>
-        {/*         <ul>
-          <li className='star' id='star-1'></li>
-          <li className='star' id='star-2'></li>
-          <li className='star' id='star-3'></li>
-          <li className='star' id='star-4'></li>
-          <li className='star' id='star-5'></li>
-          <li className='star' id='star-6'></li>
-          <li className='star' id='star-7'></li>
-          <li className='star' id='star-8'></li>
-        </ul>
-        <div className='moon'>
-          <img src={moon} className='bg-stars' alt='bg' />
-        </div> */}
+        <Canvas />
       </div>
     </header>
   );

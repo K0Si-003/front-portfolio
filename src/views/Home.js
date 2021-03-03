@@ -2,8 +2,6 @@ import './home.css';
 import React from 'react';
 import ReactFullpage from '@fullpage/react-fullpage';
 
-// import project from '../assets/images/project.jpg';
-
 const Home = () => {
   const anchors = ['home', 'projects', 'about', 'contact'];
   return (
@@ -13,25 +11,29 @@ const Home = () => {
         navigation
         navigationPosition={'left'}
         slidesNavigation={false}
-        scrollingSpeed={1000}
+        scrollingSpeed={1200}
         render={({ state, fullpageApi }) => {
           return (
             <ReactFullpage.Wrapper>
               <section className='section'>
                 <div className='container'>
                   <div className='text' id='section1'>
-                    <h1>
+                    <h1 className='title_name'>
                       Hugo <br />
                       Pioda
                     </h1>
-                    <p>Web Developer</p>
+                    <div className='separator'>
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <h3 className='title_job'>Web Developer</h3>
                   </div>
                 </div>
               </section>
               <section className='section'>
                 <div className='container'>
                   <div className='text' id='section1'>
-                    <p>Latests projects</p>
+                    <p className='title_name'>Latests projects</p>
                   </div>
                   <div className='image image-project'>
                     <div className='image-over'>
@@ -39,20 +41,19 @@ const Home = () => {
                       <div className='image-cover'></div>
                     </div>
                   </div>
-                  {/* <img className='project' src={project} alt='project' /> */}
                 </div>
               </section>
               <section className='section'>
                 <div className='container'>
                   <div className='text'>
-                    <p>About me</p>
+                    <p className='title_name'>About me</p>
                   </div>
                 </div>
               </section>
               <section className='section'>
                 <div className='container'>
                   <div className='text'>
-                    <p>Contact me</p>
+                    <p className='title_name'>Contact me</p>
                   </div>
                   <div className='image image-contact'>
                     <div className='image-over'>
