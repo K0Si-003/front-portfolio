@@ -4,15 +4,8 @@ import ReactFullpage from '@fullpage/react-fullpage';
 import Canvas from '../components/Canvas/Canvas';
 
 const Home = () => {
-  const [activeScrollBtn, setActiveScrollBtn] = useState(false);
+  const [activeScrollBtn, setActiveScrollBtn] = useState(true);
   const anchors = ['home', 'projects', 'about', 'contact'];
-  const afterLoad = (origin, destination, direction) => {
-    if (destination.index === 0) {
-      setActiveScrollBtn(true);
-    } else {
-      setActiveScrollBtn(false);
-    }
-  };
   const onLeave = (origin, destination, direction) => {
     if (origin.index === 0) {
       setActiveScrollBtn(false);
@@ -26,7 +19,6 @@ const Home = () => {
         anchors={anchors}
         navigation
         navigationPosition={'left'}
-        afterLoad={afterLoad}
         onLeave={onLeave}
         slidesNavigation={false}
         scrollingSpeed={1200}

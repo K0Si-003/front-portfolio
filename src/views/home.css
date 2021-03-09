@@ -337,22 +337,19 @@ BACKGROUND
 }
 
 /******************************************
-SCROLLdownDOWN BUTTON
+SCROLLDOWN BUTTON
 ******************************************/
 
-.scrolldown.active {
+.scrolldown {
   position: fixed;
   font-size: 0.9rem;
   bottom: 80px;
   left: 40px;
   line-height: 1;
   letter-spacing: 0.2em;
-  -webkit-writing-mode: vertical-rl;
-  -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
   color: #fff;
   z-index: 100;
-  animation: enter-scrolldown 1.3s cubic-bezier(0.86, 0, 0.07, 1);
 }
 .scrolldown:after {
   content: '';
@@ -366,44 +363,39 @@ SCROLLdownDOWN BUTTON
   bottom: -80px;
 }
 @media screen and (max-width: 420px) {
-  .scrolldown:after {
-    left: auto;
-    right: 2%;
-    height: 52px;
-    bottom: -80px;
-  }
-}
-@media screen and (max-width: 420px) {
   .scrolldown {
     left: auto;
     right: 6.25%;
     font-size: 0.7rem;
     bottom: 40px;
   }
+  .scrolldown:after {
+    right: 6.25%;
+    height: 52px;
+    bottom: -60px;
+  }
+}
+
+.scrolldown.active {
+  animation: enter-scrolldown 1.2s cubic-bezier(0.86, 0, 0.07, 1);
+}
+@keyframes enter-scrolldown {
+  from {
+    transform: translate3d(0, 180%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 .scrolldown.inactive {
-  animation: exit-scrolldown 1.3s cubic-bezier(0.86, 0, 0.07, 1);
+  animation: exit-scrolldown 1s cubic-bezier(0.86, 0, 0.07, 1) forwards;
 }
-
-@keyframes enter-scrolldown {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, 100%, 0);
-  }
-  100% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-
 @keyframes exit-scrolldown {
-  0% {
-    opacity: 1;
+  from {
     transform: translate3d(0, 0, 0);
   }
-  100% {
-    opacity: 0;
-    transform: translate3d(0, 100%, 0);
+  to {
+    transform: translate3d(0, 180%, 0);
   }
 }
