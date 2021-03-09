@@ -1,4 +1,3 @@
-import './social.css';
 import github from '../../assets/images/github.svg';
 import linkedin from '../../assets/images/linkedin.svg';
 

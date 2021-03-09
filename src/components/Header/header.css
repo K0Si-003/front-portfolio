@@ -24,22 +24,37 @@ header {
   z-index: 900;
 }
 
-.social_icons {
-  display: flex;
+.social_icons a img {
+  height: calc(var(--nav-size) * 0.5);
+  padding: 0 1em;
 }
 @media screen and (max-width: 420px) {
   .social_icons {
     display: none;
   }
 }
-.right_wrap .social_icons a img {
-  height: calc(var(--nav-size) * 0.5);
-  padding: 0 1em;
+
+.wrap_social span {
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 5px;
+  background-color: white;
 }
 .wrap_social a img {
-  height: calc(var(--nav-size) * 0.5);
+  height: calc(var(--nav-size) * 0.7);
+  margin-top: 25px;
   padding: 0 1em;
 }
+@media screen and (min-width: 420px) {
+  .wrap_social {
+    display: none;
+  }
+}
+
+/******************************************
+BURGER MENU BUTTON
+******************************************/
 
 .menu_btn {
   padding: 0 1em;
@@ -49,11 +64,6 @@ header {
 .menu_btn button {
   padding: 5px;
 }
-
-/******************************************
-BURGER MENU BUTTON
-******************************************/
-
 .hamburger {
   padding: 15px 15px;
   display: inline-block;
@@ -155,6 +165,7 @@ MENU
   left: 0;
   z-index: 800;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
@@ -172,7 +183,7 @@ MENU
 .wrap_menu li {
   margin-top: 2.5rem;
   position: relative;
-  padding: 0 153px;
+  padding: 0 140px;
   overflow: hidden;
 }
 .wrap_menu a {
@@ -184,6 +195,11 @@ MENU
   text-shadow: 0 10px 30px rgba(2, 11, 22, 0.2);
   transform: translate3d(0, 100%, 0);
   transition: 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s;
+}
+@media screen and (max-width: 420px) {
+  .wrap_menu a {
+    font-size: 3rem;
+  }
 }
 
 /******************************************

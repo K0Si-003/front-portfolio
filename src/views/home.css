@@ -9,17 +9,21 @@ GENERAL
   left: 0;
 }
 .container {
-  position: absolute;
-  height: 100vh;
+  position: relative;
   width: 100%;
-  overflow: hidden;
+  height: 100vh;
   display: flex;
-  justify-items: center;
   align-items: center;
+  color: #fff;
 }
 @media screen and (max-width: 420px) {
   .container {
-    flex-direction: column-reverse;
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-height: 761px;
   }
 }
 .fp-tableCell {
@@ -27,7 +31,7 @@ GENERAL
 }
 
 /******************************************
-TEXT
+TITLE
 ******************************************/
 
 .text {
@@ -40,21 +44,58 @@ TEXT
   z-index: 200;
   margin-left: 11%;
 }
+@media screen and (max-width: 1250px) {
+  .text {
+    margin-left: 6%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .text {
+    margin-left: 40px;
+  }
+}
 @media screen and (max-width: 420px) {
   .text {
-    position: relative;
+    width: 85%;
+    margin: 0 6%;
     top: auto;
+    transform: translate3d(0, 0, 0);
+    bottom: 8rem;
   }
 }
 
-.title_name{
-  font-size: 4rem;
-  font-family: Poppins;
+.title {
+  font-size: 6.5rem;
+  font-family: 'Poppins';
+  line-height: 1.1;
+  letter-spacing: 0.1em;
+  font-weight: normal;
+  text-shadow: 0 10px 30px rgba(2, 11, 22, 0.5);
 }
+@media screen and (max-width: 800px) {
+  .title {
+    font-size: 4.8rem;
+  }
+}
+@media screen and (max-width: 420px) {
+  .title {
+    font-size: 3rem;
+    margin-bottom: 0.8rem;
+    text-shadow: 0 3px 10px rgba(2, 11, 22, 0.5);
+  }
+}
+
+
+
 
 .text .separator {
   display: inline-block;
   margin: 2rem 1rem;
+}
+@media screen and (max-width: 420px) {
+  .text .separator {
+    margin: 0 1rem 0.6rem;
+  }
 }
 .text .separator span {
   display: block;
@@ -63,16 +104,34 @@ TEXT
   border-radius: 5px;
   background: var(--yellow);
 }
+@media screen and (max-width: 800px) {
+  .text .separator span {
+    width: 70px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .text .separator span {
+    width: 50px;
+    height: 2px;
+  }
+}
 .text .separator span:first-child {
   margin-bottom: 1.4rem;
+}
+@media screen and (max-width: 420px) {
+  .text .separator span:first-child {
+    margin-bottom: 0.7rem;
+  }
 }
 .text .separator span:last-child {
   margin-left: 54px;
 }
-
-.project {
-  width: 400px;
+@media screen and (max-width: 420px) {
+  .text .separator span:last-child {
+    margin-left: 28px;
+  }
 }
+
 
 /******************************************
 IMAGES
@@ -95,9 +154,9 @@ IMAGES
   .image {
     position: absolute;
     width: 80%;
-    height: 35%;
+    height: 50%;
     margin: 0 10%;
-    top: 15%;
+    top: 11%;
   }
 }
 .image-project {
@@ -139,20 +198,26 @@ section.active .separator span:last-child {
   animation: enter-text 1.5s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
-section.active .text .title_name{
+section.active .text .title {
   animation: enter-text 1.8s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
-section.active .text .title_job{
-  animation: enter-text 2
-  s cubic-bezier(0.86, 0, 0.07, 1);
+section.active .text .subtitle {
+  animation: enter-text 1.5s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
 @keyframes enter-text {
-  0% {transform: translate3d(-250%, 0, 0);}
-  100% {transform: translate3d(0, 0, 0);}
+  0% {
+    transform: translate3d(-250%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
 }
 
+section.active .image {
+  animation: scale-image 2s linear;
+}
 section.active .image-cover {
   animation: enter-image 1.5s cubic-bezier(0.86, 0, 0.07, 1);
 }
@@ -160,9 +225,21 @@ section.active .image-cover:last-child {
   animation: enter-image 1.3s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
+@keyframes scale-image {
+  0% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 @keyframes enter-image {
-  0% {transform: translate3d(0, 0, 0);}
-  100% {transform: translate3d(100%, 0, 0);}
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(100%, 0, 0);
+  }
 }
 
 /******************************************
@@ -195,7 +272,7 @@ SECTION NAVIGATION
   width: 40px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1250px) {
   #fp-nav {
     width: auto;
     top: auto !important;
@@ -218,5 +295,115 @@ SECTION NAVIGATION
   }
   #fp-nav ul li .active {
     height: 40px !important;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  #fp-nav {
+    bottom: 20px;
+  }
+  #fp-nav ul li {
+    width: 2px !important;
+    margin: 0 20px !important;
+  }
+  #fp-nav ul li a {
+    width: 2px !important;
+    height: 18px !important;
+  }
+  #fp-nav ul li .active {
+    height: 32px !important;
+  }
+}
+
+/******************************************
+BACKGROUND
+******************************************/
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1000;
+  background-image: linear-gradient(
+    190deg,
+    #16313b 0%,
+    #132c35 10%,
+    #0E1F25 30%,
+    #06131d 60%,
+    #03090E 100%
+  );
+}
+
+/******************************************
+SCROLLdownDOWN BUTTON
+******************************************/
+
+.scrolldown.active {
+  position: fixed;
+  font-size: 0.9rem;
+  bottom: 80px;
+  left: 40px;
+  line-height: 1;
+  letter-spacing: 0.2em;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  color: #fff;
+  z-index: 100;
+  animation: enter-scrolldown 1.3s cubic-bezier(0.86, 0, 0.07, 1);
+}
+.scrolldown:after {
+  content: '';
+  width: 2px;
+  height: 64px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: -80px;
+}
+@media screen and (max-width: 420px) {
+  .scrolldown:after {
+    left: auto;
+    right: 2%;
+    height: 52px;
+    bottom: -80px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .scrolldown {
+    left: auto;
+    right: 6.25%;
+    font-size: 0.7rem;
+    bottom: 40px;
+  }
+}
+
+.scrolldown.inactive {
+  animation: exit-scrolldown 1.3s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+@keyframes enter-scrolldown {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes exit-scrolldown {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
   }
 }

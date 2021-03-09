@@ -45,13 +45,13 @@ const Canvas = () => {
     // create particle array
     function init() {
       particlesArray = [];
-      for (let i = 0; i <= 200; i++) {
-        const size = Math.random() * 1.5;
+      for (let i = 0; i <= 300; i++) {
+        const size = Math.random() * 5;
         const x = Math.random() * (innerWidth - size * 2);
         const y = Math.random() * (innerHeight - size * 2);
         const directionX = Math.random() * 0.4 - 0.2;
         const directionY = Math.random() * 0.4 - 0.2;
-        const color = 'white';
+        const color = 'rgba(255,255,255, 0.2)';
         particlesArray.push(
           new Particle(x, y, directionX, directionY, size, color)
         );

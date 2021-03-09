@@ -1,6 +1,5 @@
 import './header.css';
 import logo from '../../assets/images/logo.svg';
-import Canvas from '../Canvas/Canvas';
 import Social from '../Social/Social';
 
 import React, { useState } from 'react';
@@ -59,19 +58,17 @@ const Header = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to='/contact' onClick={closeMenu}>
-              Contacts
+            <NavLink to='/#contact' onClick={closeMenu}>
+              Contact
             </NavLink>
           </li>
         </ul>
         <div className='wrap_social'>
+          <span />
           <Social closeMenu={closeMenu} />
         </div>
       </nav>
       <div className={`curtain ${isLoaded ? 'hidden' : ''}`}></div>
-      <div className='background'>
-        <Canvas />
-      </div>
     </header>
   );
 };

@@ -2,8 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 :root {
-
-  
   --bg: #232323;
   --bg-accent: #484a4d;
   --text-color: #dadce1;
@@ -14,13 +12,16 @@
   --blue: #335052;
   --yellow: #F15B32;
   --green: #733827;
-
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
 }
 
 body {
